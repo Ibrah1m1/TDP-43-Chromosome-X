@@ -1,65 +1,98 @@
+# 👋 Hi, I'm Ibrahim Eissa Abu Alghayth!
 
-### Pipeline Steps:
+### 🎓 Software Engineering Student at University of Jeddah | Class of 2027
 
-1. **Quality Control (FastQC)** - Assess raw sequencing data quality
-2. **Trimming (fastp)** - Remove adapters and low-quality reads (Q>20, length>36bp)
-3. **Quantification (Salmon)** - Quasi-mapping to Chromosome X transcriptome
-4. **Aggregation (tximport)** - Summarize transcript counts to gene level
-5. **Differential Expression (DESeq2)** - Identify significant gene changes
-6. **Visualization** - Volcano plots, heatmaps, PCA
+<div align="center">
 
----
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourname)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ibrahim.abualg@gmail.com)
+[![Location](https://img.shields.io/badge/Location-Jeddah,%20Saudi%20Arabia-4CAF50?style=for-the-badge&logo=google-maps&logoColor=white)]
 
-## 📈 Visualizations
-
-### Volcano Plot - Differentially Expressed Genes
-
-![Volcano Plot](visualizations/volcano_plot.png)
-
-*Red: Upregulated (16 genes) | Blue: Downregulated (7 genes) | Grey: Not significant*
-
-### PCA Plot - Sample Clustering
-
-![PCA Plot](visualizations/pca_plot.png)
-
-*PC1 (49.7% variance) separates KO from WT samples*
-
-### Heatmap - Gene Expression Patterns
-
-![Heatmap](visualizations/heatmap.png)
-
-*Z-score scaled expression for 23 significant genes*
+</div>
 
 ---
 
-## 👥 Team
+## 📌 About Me
 
-| Name | Role |
-|------|------|
-| **Haitham Alahmadi** | Bioinformatics Analysis |
-| **Ibrahim Eissa** | Pipeline Development & QC |
-| **Ahmed Mawlawi** | Data Visualization |
+I'm a passionate **Software Engineering student** with experience in **application development**, **UI/UX design**, and **bioinformatics research**. I love solving real-world problems through technology and continuously learning new skills.
+
+**Currently seeking internship opportunities** to apply my diverse skills and create real impact!
 
 ---
 
-## 📜 License
+## 🛠️ Technical Skills
 
-This project is for educational and research purposes.
-
----
-
-## 📧 Contact
-
-**Ibrahim Eissa Abu Alghayth**  
-📧 ibrahim.abualg@gmail.com  
-🔗 [LinkedIn](https://linkedin.com/in/yourname)  
-🐙 [GitHub](https://github.com/Ibrah1m1)
+| Category | Skills |
+|----------|--------|
+| **Programming** | Python, Java, JavaScript, C, R, SQL |
+| **Web** | HTML, CSS |
+| **Bioinformatics** | Linux, Salmon, DESeq2, FastQC, fastp |
+| **Design** | Figma, Canva, UI/UX Prototyping |
+| **Tools** | Git, GitHub, VS Code, RStudio |
 
 ---
 
-## 🔗 Related Links
+## 📊 Featured Projects
 
-- [KAUST Academy](https://kaust.edu.sa)
-- [DESeq2 Documentation](https://bioconductor.org/packages/DESeq2)
-- [Salmon Documentation](https://salmon.readthedocs.io)
-- [GEO Dataset (GSE136366)](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136366)
+| Project | Description | Technologies |
+|---------|-------------|--------------|
+| [🧬 TDP-43 Chromosome X Analysis](TDP-43-Chromosome-X) | Bioinformatics research on ALS biomarkers | Python, R, Linux, Salmon |
+| [✈️ Cloud Hotel Booking App](Cloud-Hotel-Booking-App) | UI/UX design with 55+ user research participants | Figma, User Research |
+| [🌱 Eco Zone Hackathon](Eco-Zone-Hackathon) | AI-driven environmental awareness system | UI/UX, Rapid Prototyping |
+| [🏥 HealthFy](HealthFy) | Desktop healthcare application | Java Swing |
+| [💳 FlowPay](FlowPay) | Digital payment system design | Figma, UI/UX |
+| [🗄️ Data Architecture](Data-Architecture) | Database schema design with ERD | SQL, ERD |
+
+---
+
+## 📜 Top Certifications
+
+| Certification | Organization | Date |
+|---------------|--------------|------|
+| 🏆 **Introduction to Bioinformatics (with Distinction)** | KAUST Academy | Jan 2026 |
+| 🐍 **Python Programming Essentials** | Rice University/Coursera | Nov 2025 |
+| 🐧 **Linux Commands & Shell Scripting** | IBM/Coursera | Nov 2025 |
+| 🧬 **Fundamental Skills in Bioinformatics** | KAUST/Coursera | Nov 2025 |
+| 🎨 **UI/UX Design Workshop** | Interface Path | Dec 2025 |
+| 🏅 **EmpowerMe Hackathon** | INJAZ/Starbucks Foundation | Jul 2025 |
+
+---
+
+## 🏆 Key Achievements
+
+- ✅ **KAUST Bioinformatics Advanced Program** with Distinction
+- ✅ **12+ Certifications** from IBM, Rice, Coursera, KAUST
+- ✅ **55+ Participant** User Research (Cloud Hotel Project)
+- ✅ **95.42% Mapping Rate** in Bioinformatics Pipeline
+- ✅ **23 Differentially Expressed Genes** Identified (ALS Research)
+
+---
+
+## 🤝 Communities
+
+| Community | Role | Period |
+|-----------|------|--------|
+| **Drone Club** | Events & Activities Member | 2025 |
+| **GDG** | Workshop Participant | 2024 – Present |
+
+---
+
+## 📫 Connect With Me
+
+<p align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourname)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ibrahim.abualg@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ibrah1m1)
+
+</p>
+
+---
+
+### ⭐ Thanks for visiting my profile! Feel free to explore my projects and connect with me.
+
+<div align="center">
+
+**Made with ❤️ by Ibrahim Eissa**
+
+</div>
