@@ -1,60 +1,65 @@
-# 🧬 TDP-43 Loss: Chromosome X Transcriptomic Analysis
 
-> **KAUST Academy - Bioinformatics Advanced Program (Stage 3)**
+### Pipeline Steps:
 
-<div align="center">
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![KAUST](https://img.shields.io/badge/KAUST-Academy-005DAA?style=for-the-badge&logo=google-scholar&logoColor=white)
-
-</div>
+1. **Quality Control (FastQC)** - Assess raw sequencing data quality
+2. **Trimming (fastp)** - Remove adapters and low-quality reads (Q>20, length>36bp)
+3. **Quantification (Salmon)** - Quasi-mapping to Chromosome X transcriptome
+4. **Aggregation (tximport)** - Summarize transcript counts to gene level
+5. **Differential Expression (DESeq2)** - Identify significant gene changes
+6. **Visualization** - Volcano plots, heatmaps, PCA
 
 ---
 
-## 📌 Overview
+## 📈 Visualizations
 
-This project analyzes the transcriptomic impact of **TDP-43 protein loss** on **Human Chromosome X**, contributing to **ALS (Amyotrophic Lateral Sclerosis)** research. TDP-43 mislocalization is present in **>97% of ALS cases**, making it a critical target for understanding disease mechanisms.
+### Volcano Plot - Differentially Expressed Genes
 
-**Completed with Distinction** at KAUST Academy Bioinformatics Advanced Program.
+![Volcano Plot](visualizations/volcano_plot.png)
 
----
+*Red: Upregulated (16 genes) | Blue: Downregulated (7 genes) | Grey: Not significant*
 
-## 🎯 Objectives
+### PCA Plot - Sample Clustering
 
-- Analyze differential gene expression between TDP-43 knockout vs. wild-type samples
-- Build a reproducible RNA-seq analysis pipeline
-- Identify potential X-linked biomarkers for ALS
-- Achieve high-quality mapping and quantification metrics
+![PCA Plot](visualizations/pca_plot.png)
 
----
+*PC1 (49.7% variance) separates KO from WT samples*
 
-## 🛠️ Technologies & Tools
+### Heatmap - Gene Expression Patterns
 
-| Tool | Purpose |
-|------|---------|
-| **FastQC** | Quality control of raw sequencing data |
-| **fastp** | Adapter trimming and quality filtering |
-| **Salmon** | Transcript quantification (quasi-mapping) |
-| **DESeq2** | Differential expression analysis |
-| **tximport** | Gene-level aggregation |
-| **R/Python** | Data analysis and visualization |
-| **Linux/WSL** | Computational environment |
+![Heatmap](visualizations/heatmap.png)
+
+*Z-score scaled expression for 23 significant genes*
 
 ---
 
-## 📊 Key Results
+## 👥 Team
 
-| Metric | Value |
-|--------|-------|
-| **Mapping Rate** | 95.42% |
-| **Read Retention** | 97% |
-| **Genes Quantified** | 1,734 (Chromosome X) |
-| **Differentially Expressed Genes** | 23 (16 upregulated, 7 downregulated) |
-| **Statistical Threshold** | padj < 0.05, \|log2FC\| > 1 |
-| **Q30 Score** | 94.07% (after filtering) |
+| Name | Role |
+|------|------|
+| **Haitham Alahmadi** | Bioinformatics Analysis |
+| **Ibrahim Eissa** | Pipeline Development & QC |
+| **Ahmed Mawlawi** | Data Visualization |
 
 ---
 
-## 📁 Project Structure
+## 📜 License
+
+This project is for educational and research purposes.
+
+---
+
+## 📧 Contact
+
+**Ibrahim Eissa Abu Alghayth**  
+📧 ibrahim.abualg@gmail.com  
+🔗 [LinkedIn](https://linkedin.com/in/yourname)  
+🐙 [GitHub](https://github.com/Ibrah1m1)
+
+---
+
+## 🔗 Related Links
+
+- [KAUST Academy](https://kaust.edu.sa)
+- [DESeq2 Documentation](https://bioconductor.org/packages/DESeq2)
+- [Salmon Documentation](https://salmon.readthedocs.io)
+- [GEO Dataset (GSE136366)](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136366)
