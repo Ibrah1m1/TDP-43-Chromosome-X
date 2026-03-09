@@ -93,22 +93,21 @@ Raw FASTQ → FastQC → fastp Trimming → Salmon Quantification → tximport �
 
 ### Volcano Plot - Differentially Expressed Genes
 
-![Volcano Plot](visual<img width="791" height="499" alt="Screenshot 2026-03-10 at 2 51 31 AM" src="https://github.com/user-attachments/assets/1516b25f-b5f5-4f75-a700-15899a20d41c" />
-izations/volcano_plot.png)
+<img width="791" height="499" alt="Screenshot 2026-03-10 at 2 51 31 AM" src="https://github.com/user-attachments/assets/1516b25f-b5f5-4f75-a700-15899a20d41c" />
 
 *🔴 Red: Upregulated (16 genes) | 🔵 Blue: Downregulated (7 genes) | ⚪ Grey: Not significant*
 
 ### PCA Plot - Sample Clustering
 
-![PCA Plot](visualizations/pca_<img width="775" height="619" alt="Screenshot 1447-08-18 at 2 17 04 PM" src="https://github.com/user-attachments/assets/63836f5e-a922-4856-826d-707ebda3210b" />
-plot.png)
+<img width="775" height="619" alt="Screenshot 1447-08-18 at 2 17 04 PM" src="https://github.com/user-attachments/assets/63836f5e-a922-4856-826d-707ebda3210b" />
+
 
 *PC1 (49.7% variance) separates KO from WT samples*
 
 ### Heatmap - Gene Expression Patterns
 
-![Heatmap](visualizations/heat<img width="509" height="634" alt="Screenshot 1447-08-18 at 2 19 14 PM" src="https://github.com/user-attachments/assets/a948279a-982f-4f2a-82bf-409593e70203" />
-map.png)
+<img width="509" height="634" alt="Screenshot 1447-08-18 at 2 19 14 PM" src="https://github.com/user-attachments/assets/a948279a-982f-4f2a-82bf-409593e70203" />
+
 
 *Z-score scaled expression for 23 significant genes*
 
@@ -156,8 +155,8 @@ This project is for educational and research purposes.
 - [DESeq2 Documentation](https://bioconductor.org/packages/DESeq2)
 - [Salmon Documentation](https://salmon.readthedocs.io)
 - [GEO Dataset (GSE136366)](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136366)
-- [Full Project Report]([TDP-43 Loss The Chromosome X Impact.pdf](https://github.com/user-attachments/files/25855567/TDP-43.Loss.The.Chromosome.X.Impact.pdf)
-)
+- [Full Project Report](https://github.com/user-attachments/files/25855567/TDP-43.Loss.The.Chromosome.X.Impact.pdf)
+
 
 ---
 
