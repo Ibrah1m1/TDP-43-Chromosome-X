@@ -1,4 +1,3 @@
-config/samples.tsv
 
 sample_id	condition	replicate	fastq_1	fastq_2
 KO_1	knockout	1	KO_rep1_R1.fastq.gz	KO_rep1_R2.fastq.gz
