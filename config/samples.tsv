@@ -1,1 +1,8 @@
 
+sample_id	condition	replicate	sra_id	fastq_1	fastq_2
+KO_1	knockout	1	SRR10191847	KO_1_R1.fastq.gz	KO_1_R2.fastq.gz
+KO_2	knockout	2	SRR10191848	KO_2_R1.fastq.gz	KO_2_R2.fastq.gz
+KO_3	knockout	3	SRR10191849	KO_3_R1.fastq.gz	KO_3_R2.fastq.gz
+WT_1	wildtype	1	SRR10191850	WT_1_R1.fastq.gz	WT_1_R2.fastq.gz
+WT_2	wildtype	2	SRR10191851	WT_2_R1.fastq.gz	WT_2_R2.fastq.gz
+WT_3	wildtype	3	SRR10191852	WT_3_R1.fastq.gz	WT_3_R2.fastq.gz
