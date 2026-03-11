@@ -1,0 +1,56 @@
+#!/bin/bash
+# Download GSE136366 Dataset from NCBI SRA
+# TDP-43 Chromosome X Analysis
+
+set -e
+
+echo "========================================="
+echo "  Download GSE136366 Dataset"
+echo "========================================="
+
+# Create directories
+mkdir -p data/raw
+
+# SRA accession numbers for GSE136366
+# Based on the published study [[3]][[7]][[8]]
+declare -a SRA_IDS=(
+    "SRR10191847"  # KO_rep1
+    "SRR10191848"  # KO_rep2
+    "SRR10191849"  # KO_rep3
+    "SRR10191850"  # WT_rep1
+    "SRR10191851"  # WT_rep2
+    "SRR10191852"  # WT_rep3
+)
+
+declare -a SAMPLE_NAMES=(
+    "KO_1" "KO_2" "KO_3" "WT_1" "WT_2" "WT_3"
+)
+
+# Download each sample
+for i in "${!SRA_IDS[@]}"; do
+    SRA_ID="${SRA_IDS[$i]}"
+    SAMPLE="${SAMPLE_NAMES[$i]}"
+    
+    echo "Downloading ${SAMPLE} (${SRA_ID})..."
+    
+    # Using fasterq-dump from SRA Toolkit
+    fasterq-dump ${SRA_ID} \
+        -O data/raw \
+        -e 4 \
+        --split-files \
+        --progress
+    
+    # Compress files
+    gzip data/raw/${SRA_ID}_1.fastq
+    gzip data/raw/${SRA_ID}_2.fastq
+    
+    # Rename to match sample names
+    mv data/raw/${SRA_ID}_1.fastq.gz data/raw/${SAMPLE}_R1.fastq.gz
+    mv data/raw/${SRA_ID}_2.fastq.gz data/raw/${SAMPLE}_R2.fastq.gz
+    
+    echo "✓ ${SAMPLE} download complete"
+done
+
+echo "========================================="
+echo "  All samples downloaded successfully!"
+echo "========================================="
