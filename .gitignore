@@ -1,0 +1,38 @@
+# ============ DATA (too large for Git) ============
+data/raw/*.fastq.gz
+data/raw/*.fastq
+data/trimmed/*.fastq.gz
+data/trimmed/*.fastq
+data/reference/*.fa
+data/reference/*.fa.gz
+data/reference/salmon_index_chrX/
+
+# ============ RESULTS (regeneratable) ============
+results/**/*.csv
+results/**/*.tsv
+results/**/*.txt
+results/**/*.html
+results/**/*.pdf
+visualizations/*.png
+visualizations/*.pdf
+visualizations/*.svg
+
+# ============ R/Python cache ============
+.Rhistory
+.RData
+*.rds
+__pycache__/
+*.pyc
+*.Rproj.user/
+
+# ============ System/IDE ============
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# ============ Environment ============
+env/
+venv/
+*.env
