@@ -1,0 +1,64 @@
+environment.yml
+
+name: tdp43_chrX
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - r-base=4.3
+  - r-essentials
+  - fastqc=0.12.1
+  - fastp=0.23.4
+  - salmon=1.10.1
+  - samtools=1.17
+  - multiqc=1.14
+  - sra-tools=3.0.7
+  - r-tximport
+  - r-deseq2
+  - r-ggplot2
+  - r-pheatmap
+  - r-clusterprofiler
+  - r-org.hs.eg.db
+  - r-enrichplot
+  - r-apeglm
+  - pip
+  - pip:
+    - gprofiler-official
+    - jupyter
+    - notebook
+-----------------------------------------------------------------
+
+
+.gitignore
+# Data files (too large for git)
+data/raw/*.fastq.gz
+data/trimmed/*.fastq.gz
+data/reference/*.fa
+data/reference/*.fa.gz
+
+# Results (regenerate from pipeline)
+results/
+visualizations/*.png
+visualizations/*.pdf
+
+# R/Python cache
+.Rhistory
+.RData
+.rds
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+*.Rproj.user/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
