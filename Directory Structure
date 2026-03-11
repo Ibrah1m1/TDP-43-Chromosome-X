@@ -1,0 +1,32 @@
+TDP-43-Chromosome-X/
+├── data/
+│   ├── raw/              # Raw FASTQ files (or download script)
+│   ├── trimmed/          # Processed FASTQ files
+│   └── reference/        # Reference transcriptome (Chromosome X)
+├── scripts/
+│   ├── 01_quality_control.sh
+│   ├── 02_trimming.sh
+│   ├── 03_salmon_quant.sh
+│   ├── 04_build_index.sh
+│   └── download_data.sh
+├── analysis/
+│   ├── 01_tximport_deseq2.R
+│   ├── 02_visualization.R
+│   └── 03_enrichment_analysis.R
+├── results/
+│   ├── qc_reports/
+│   ├── quantification/
+│   └── differential_expression/
+├── visualizations/
+│   ├── volcano_plot.png
+│   ├── pca_plot.png
+│   ├── heatmap.png
+│   └── qc_summary.html
+├── docs/
+│   └── Final_Report.pdf
+├── config/
+│   ├── samples.tsv
+│   └── config.yaml
+├── .gitignore
+├── environment.yml
+└── README.md
