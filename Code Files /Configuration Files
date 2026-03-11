@@ -1,6 +1,5 @@
 config/samples.tsv
 
-
 sample_id	condition	replicate	fastq_1	fastq_2
 KO_1	knockout	1	KO_rep1_R1.fastq.gz	KO_rep1_R2.fastq.gz
 KO_2	knockout	2	KO_rep2_R1.fastq.gz	KO_rep2_R2.fastq.gz
@@ -8,3 +7,42 @@ KO_3	knockout	3	KO_rep3_R1.fastq.gz	KO_rep3_R2.fastq.gz
 WT_1	wildtype	1	WT_rep1_R1.fastq.gz	WT_rep1_R2.fastq.gz
 WT_2	wildtype	2	WT_rep2_R1.fastq.gz	WT_rep2_R2.fastq.gz
 WT_3	wildtype	3	WT_rep3_R1.fastq.gz	WT_rep3_R2.fastq.gz
+-----------------------------------------------
+
+config/config.yaml
+
+# TDP-43 Chromosome X Analysis Configuration
+project:
+  name: "TDP-43-Chromosome-X"
+  description: "ALS Research - Chromosome X Transcriptomic Analysis"
+
+dataset:
+  geo_accession: "GSE136366"
+  cell_type: "HeLa"
+  organism: "Homo sapiens"
+  reference: "GRCh38"
+  chromosome: "X"
+
+sequencing:
+  platform: "Illumina HiSeq 2500"
+  read_type: "paired-end"
+  read_length: 70
+
+quality_control:
+  qscore_threshold: 20
+  length_threshold: 36
+  adapter_detection: "auto"
+
+salmon:
+  index_type: "quasi"
+  kmer_size: 31
+  lib_type: "A"  # Auto-detect
+
+deseq2:
+  padj_threshold: 0.05
+  log2fc_threshold: 1
+  independent_filtering: true
+
+output:
+  results_dir: "results"
+  viz_dir: "visualizations"
