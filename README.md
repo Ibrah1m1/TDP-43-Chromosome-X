@@ -225,6 +225,9 @@ This project is for educational and research purposes.
 - [Salmon Documentation](https://salmon.readthedocs.io)
 - [GEO Dataset (GSE136366)](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE136366)
 - [Full Project Report](https://github.com/user-attachments/files/25855567/TDP-43.Loss.The.Chromosome.X.Impact.pdf)
+- [presentation] [project Chromosome X.pptx](https://github.com/user-attachments/files/25921069/project.Chromosome.X.pptx)
+[project Chromosome X.pptx](https://github.com/user-attachments/files/25921069/project.Chromosome.X.pptx)
+
 
 
 ---
