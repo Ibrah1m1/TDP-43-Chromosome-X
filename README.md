@@ -63,7 +63,26 @@ This project analyzes the transcriptomic impact of **TDP-43 protein loss** on **
 
 ## 📁 Project Structure
 ```text
-TDP-43-Chromosome-X/ ├── data/ │ ├── raw/ # Raw FASTQ files (GSE136366) │ ├── trimmed/ # Processed FASTQ files │ └── reference/ # Reference genome (GRCh38, Chromosome X) ├── scripts/ │ ├── quality_control.sh │ ├── trimming.sh │ ├── salmon_quant.sh │ └── deseq2_analysis.R ├── results/ │ ├── qc_reports/ │ ├── quantification/ │ └── differential_expression/ ├── visualizations/ │ ├── volcano_plot.png │ ├── heatmap.png │ └── pca_plot.png ├── docs/ │ └── Final_Report.pdf ├── config/ │ └── samples.tsv ├── .gitignore ├── environment.yml ├── LICENSE ├── run_pipeline.sh └── README.md
+TDP-43-Chromosome-X/
+├── data/
+│   ├── raw/           # Raw FASTQ files (GSE136366)
+│   ├── trimmed/       # Processed FASTQ files
+│   └── reference/     # Reference genome (GRCh38, Chromosome X)
+├── scripts/
+│   ├── quality_control.sh
+│   ├── salmon_quant.sh
+│   └── deseq2_analysis.R
+├── results/
+│   ├── qc_reports/
+│   ├── quantification/
+│   └── differential_expression/
+├── visualizations/
+│   ├── volcano_plot.png
+│   ├── heatmap.png
+│   └── pca_plot.png
+├── docs/
+│   └── Final_Report.pdf
+└── README.md
 ```
 
 
