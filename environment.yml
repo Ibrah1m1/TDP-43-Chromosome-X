@@ -1,0 +1,45 @@
+name: tdp43-chrX
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  # Core
+  - python=3.10
+  - r-base=4.3
+  - pip
+  
+  # QC & Preprocessing
+  - fastqc=0.12.1
+  - fastp=0.23.4
+  - multiqc=1.17
+  
+  # Quantification
+  - salmon=1.10.1
+  - samtools=1.19
+  
+  # R Bioconductor packages
+  - r-essentials
+  - r-tximport
+  - r-deseq2
+  - r-ggplot2
+  - r-pheatmap
+  - r-rjson
+  - r-apeglm
+  
+  # Enrichment analysis
+  - r-clusterprofiler
+  - r-org.hs.eg.db
+  - r-enrichplot
+  
+  # Utilities
+  - wget
+  - gzip
+  
+  # Optional: Jupyter for interactive analysis
+  - jupyter
+  - notebook
+
+  # Pip packages (if needed)
+  - pip:
+    - gprofiler-official
