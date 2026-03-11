@@ -123,6 +123,56 @@ Raw FASTQ → FastQC → fastp Trimming → Salmon Quantification → tximport �
 | **KEGG Pathway** | ATP-dependent chromatin remodeling identified as disrupted pathway. |
 
 ---
+## 🔧 Setup & Reproducibility
+
+This project uses conda for environment management. To reproduce the analysis:
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/Ibrah1m1/TDP-43-Chromosome-X.git
+cd TDP-43-Chromosome-X
+
+# 2. Create and activate the conda environment
+conda env create -f environment.yml
+conda activate tdp43-chrX
+
+# 3. Run the complete pipeline
+bash run_pipeline.sh
+
+# Or run steps individually:
+bash scripts/quality_control.sh
+bash scripts/salmon_quant.sh
+Rscript scripts/deseq2_analysis.R
+```
+💡 Raw data files are not included in this repository due to size.  Download from GEO accession GSE136366 and place in data/raw/ following the structure in config/samples.tsv.
+
+
+---
+
+## 🚀 Final Checklist: What to Do Now
+
+```bash
+# 1. Create the missing files
+touch .gitignore environment.yml LICENSE
+mkdir -p config
+# Then paste the content provided above into each file
+
+# 2. Create config/samples.tsv with your actual sample info
+
+# 3. Create run_pipeline.sh and make executable
+chmod +x run_pipeline.sh
+
+# 4. Update README.md: Add the "Setup & Reproducibility" section above
+
+# 5. Test the environment creation (optional but recommended)
+conda env create -f environment.yml --dry-run
+
+# 6. Commit and push
+git add .gitignore environment.yml LICENSE config/ run_pipeline.sh README.md
+git commit -m "Add reproducibility files: environment, config, pipeline runner"
+git push origin main
+```
+---
 
 ## 👥 Team
 
