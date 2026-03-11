@@ -1,0 +1,10 @@
+config/samples.tsv
+
+
+sample_id	condition	replicate	fastq_1	fastq_2
+KO_1	knockout	1	KO_rep1_R1.fastq.gz	KO_rep1_R2.fastq.gz
+KO_2	knockout	2	KO_rep2_R1.fastq.gz	KO_rep2_R2.fastq.gz
+KO_3	knockout	3	KO_rep3_R1.fastq.gz	KO_rep3_R2.fastq.gz
+WT_1	wildtype	1	WT_rep1_R1.fastq.gz	WT_rep1_R2.fastq.gz
+WT_2	wildtype	2	WT_rep2_R1.fastq.gz	WT_rep2_R2.fastq.gz
+WT_3	wildtype	3	WT_rep3_R1.fastq.gz	WT_rep3_R2.fastq.gz
