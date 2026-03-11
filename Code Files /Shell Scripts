@@ -1,0 +1,169 @@
+scripts/01_quality_control.sh
+
+
+#!/bin/bash
+# Quality Control with FastQC
+# TDP-43 Chromosome X Analysis
+
+set -e
+
+echo "========================================="
+echo "  Step 1: Quality Control (FastQC)"
+echo "========================================="
+
+# Create output directory
+mkdir -p results/qc_reports/raw
+
+# Input directory
+RAW_DATA="data/raw"
+
+# Run FastQC on all raw FASTQ files
+echo "Running FastQC on raw reads..."
+fastqc -t 4 -o results/qc_reports/raw ${RAW_DATA}/*.fastq.gz
+
+# Generate MultiQC report
+echo "Generating MultiQC summary..."
+multiqc -o results/qc_reports/raw -n "raw_reads_QC" results/qc_reports/raw/
+
+echo "✓ Quality control complete!"
+echo "Reports saved to: results/qc_reports/raw/"
+
+-----------------------------------------
+
+scripts/02_trimming.sh
+
+#!/bin/bash
+# Trimming with fastp
+# TDP-43 Chromosome X Analysis
+
+set -e
+
+echo "========================================="
+echo "  Step 2: Trimming (fastp)"
+echo "========================================="
+
+# Create directories
+mkdir -p data/trimmed
+mkdir -p results/qc_reports/trimmed
+
+# Input/Output directories
+RAW_DATA="data/raw"
+TRIMMED_DATA="data/trimmed"
+
+# Load samples from config
+SAMPLES_FILE="config/samples.tsv"
+
+# Process each sample
+tail -n +2 ${SAMPLES_FILE} | while IFS=$'\t' read -r sample_id condition replicate fastq_1 fastq_2; do
+    echo "Processing ${sample_id}..."
+    
+    fastp \
+        -i ${RAW_DATA}/${fastq_1} \
+        -I ${RAW_DATA}/${fastq_2} \
+        -o ${TRIMMED_DATA}/${sample_id}_R1.trimmed.fastq.gz \
+        -O ${TRIMMED_DATA}/${sample_id}_R2.trimmed.fastq.gz \
+        -h results/qc_reports/trimmed/${sample_id}_fastp.html \
+        -j results/qc_reports/trimmed/${sample_id}_fastp.json \
+        -q 20 \
+        -l 36 \
+        --detect_adapter_for_pe \
+        --thread 4 \
+        --compression 6
+    
+    echo "✓ ${sample_id} complete"
+done
+
+# Generate MultiQC report for trimmed data
+echo "Generating MultiQC summary for trimmed reads..."
+multiqc -o results/qc_reports/trimmed -n "trimmed_reads_QC" results/qc_reports/trimmed/
+
+echo "✓ Trimming complete!"
+
+-----------------------------------------------------------
+
+scripts/04_build_index.sh
+
+#!/bin/bash
+# Build Salmon Index for Chromosome X
+# TDP-43 Chromosome X Analysis
+
+set -e
+
+echo "========================================="
+echo "  Step 0: Build Salmon Index (Chromosome X)"
+echo "========================================="
+
+# Create directories
+mkdir -p data/reference
+
+# Download Ensembl transcriptome (Chromosome X only)
+echo "Downloading Ensembl transcriptome..."
+
+# Option 1: Download full transcriptome and filter
+wget -O data/reference/Homo_sapiens.GRCh38.cdna.all.fa.gz \
+    "ftp://ftp.ensembl.org/pub/release-104/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz"
+
+# Extract and filter for Chromosome X transcripts
+echo "Filtering for Chromosome X transcripts..."
+gunzip -c data/reference/Homo_sapiens.GRCh38.cdna.all.fa.gz | \
+    awk '/^>/ {if ($0 ~ /chromosome_X|chrX/) {p=1} else {p=0}} p' \
+    > data/reference/chrX_transcripts.fa
+
+# Build Salmon index
+echo "Building Salmon index..."
+salmon index \
+    -t data/reference/chrX_transcripts.fa \
+    -i data/reference/salmon_index_chrX \
+    -k 31 \
+    --type quasi \
+    --threads 8
+
+echo "✓ Salmon index built successfully!"
+echo "Index saved to: data/reference/salmon_index_chrX/"
+----------------------------------------------------------------------------
+
+scripts/03_salmon_quant.sh
+
+#!/bin/bash
+# Salmon Quantification
+# TDP-43 Chromosome X Analysis
+
+set -e
+
+echo "========================================="
+echo "  Step 3: Salmon Quantification"
+echo "========================================="
+
+# Create output directory
+mkdir -p results/quantification
+
+# Reference index
+INDEX="data/reference/salmon_index_chrX"
+
+# Trimmed data directory
+TRIMMED_DATA="data/trimmed"
+
+# Load samples from config
+SAMPLES_FILE="config/samples.tsv"
+
+# Process each sample
+tail -n +2 ${SAMPLES_FILE} | while IFS=$'\t' read -r sample_id condition replicate fastq_1 fastq_2; do
+    echo "Quantifying ${sample_id}..."
+    
+    salmon quant \
+        -i ${INDEX} \
+        -l A \
+        -1 ${TRIMMED_DATA}/${sample_id}_R1.trimmed.fastq.gz \
+        -2 ${TRIMMED_DATA}/${sample_id}_R2.trimmed.fastq.gz \
+        -p 4 \
+        --validateMappings \
+        -o results/quantification/${sample_id}
+    
+    echo "✓ ${sample_id} quantification complete"
+done
+
+# Generate MultiQC report for Salmon
+echo "Generating MultiQC summary for Salmon quantification..."
+multiqc -o results/quantification -n "salmon_quantification" results/quantification/
+
+echo "✓ Salmon quantification complete!"
