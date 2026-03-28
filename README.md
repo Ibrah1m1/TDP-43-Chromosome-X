@@ -1,4 +1,4 @@
-# 🧬 TDP-43 Loss: Chromosome X Transcriptomic Analysis
+#  TDP-43 Loss: Chromosome X Transcriptomic Analysis
 
 > **KAUST Academy - Bioinformatics Advanced Program (Stage 3)**  
 > **Contributing to ALS Research through Computational Biology**
@@ -15,7 +15,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 This project analyzes the transcriptomic impact of **TDP-43 protein loss** on **Human Chromosome X**, contributing to **ALS (Amyotrophic Lateral Sclerosis)** research. TDP-43 mislocalization is present in **>97% of ALS cases**, making it a critical target for understanding disease mechanisms.
 
@@ -23,7 +23,7 @@ This project analyzes the transcriptomic impact of **TDP-43 protein loss** on **
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 - Analyze differential gene expression between **TDP-43 knockout (KD)** vs. **wild-type (WT)** samples.
 - Build a reproducible **RNA-seq analysis pipeline** using Linux-based tools.
@@ -32,7 +32,7 @@ This project analyzes the transcriptomic impact of **TDP-43 protein loss** on **
 
 ---
 
-## 🛠️ Technologies & Tools
+##  Technologies & Tools
 
 | Tool | Purpose |
 |------|---------|
@@ -46,7 +46,7 @@ This project analyzes the transcriptomic impact of **TDP-43 protein loss** on **
 
 ---
 
-## 📊 Key Results
+##  Key Results
 
 | Metric | Value |
 |--------|-------|
@@ -61,7 +61,7 @@ This project analyzes the transcriptomic impact of **TDP-43 protein loss** on **
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 ```text
 TDP-43-Chromosome-X/
 ├── data/
@@ -90,7 +90,7 @@ TDP-43-Chromosome-X/
 
 ---
 
-## 🚀 Pipeline Workflow
+##  Pipeline Workflow
 Raw FASTQ → FastQC → fastp Trimming → Salmon Quantification → tximport → DESeq2 → Visualization
 
 
@@ -132,7 +132,7 @@ Raw FASTQ → FastQC → fastp Trimming → Salmon Quantification → tximport �
 
 ---
 
-## 🧬 Biological Insights
+##  Biological Insights
 
 | Finding | Implication |
 |---------|-------------|
@@ -142,7 +142,7 @@ Raw FASTQ → FastQC → fastp Trimming → Salmon Quantification → tximport �
 | **KEGG Pathway** | ATP-dependent chromatin remodeling identified as disrupted pathway. |
 
 ---
-## 🔧 Setup & Reproducibility
+##  Setup & Reproducibility
 
 This project uses conda for environment management. To reproduce the analysis:
 
@@ -163,12 +163,12 @@ bash scripts/quality_control.sh
 bash scripts/salmon_quant.sh
 Rscript scripts/deseq2_analysis.R
 ```
-💡 Raw data files are not included in this repository due to size.  Download from GEO accession GSE136366 and place in data/raw/ following the structure in config/samples.tsv.
+ Raw data files are not included in this repository due to size.  Download from GEO accession GSE136366 and place in data/raw/ following the structure in config/samples.tsv.
 
 
 ---
 
-## 🚀 Final Checklist: What to Do Now
+##  Final Checklist: What to Do Now
 
 ```bash
 # 1. Create the missing files
@@ -193,7 +193,7 @@ git push origin main
 ```
 ---
 
-## 👥 Team
+##  Team
 
 | Name | Role |
 |------|------|
@@ -203,22 +203,22 @@ git push origin main
 
 ---
 
-## 📜 License
+##  License
 
 This project is for educational and research purposes.
 
 ---
 
-## 📧 Contact
+##  Contact
 
 **Ibrahim Eissa Abu Alghayth**  
-📧 ibrahim.abualg@gmail.com  
-🔗 [LinkedIn](https://linkedin.com/in/yourname)  
-🐙 [GitHub](https://github.com/Ibrah1m1)
+ ibrahim.abualg@gmail.com  
+ [LinkedIn](https://linkedin.com/in/yourname)  
+ [GitHub](https://github.com/Ibrah1m1)
 
 ---
 
-## 🔗 Related Links
+##  Related Links
 
 - [KAUST Academy](https://kaust.edu.sa)
 - [DESeq2 Documentation](https://bioconductor.org/packages/DESeq2)
@@ -231,8 +231,3 @@ This project is for educational and research purposes.
 
 ---
 
-<div align="center">
-
-**Made with ❤️ by Ibrahim Eissa**
-
-</div>
